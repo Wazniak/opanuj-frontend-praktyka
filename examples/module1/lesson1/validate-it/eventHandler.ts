@@ -1,12 +1,12 @@
-import { input, result } from './domElements.ts';
-import { sanitizeInput, validateValue } from './validatorHandler.ts';
+import { formInput, result } from './domElements.ts';
+import { validateValue } from './validatorHandler.ts';
 
-export function validateInput() {
-  const value = sanitizeInput(input);
-  result.innerHTML = validateValue(value);
+export function validateInput(): void {
+  const inputValue: number = Number(formInput.value.trim());
+  result.innerHTML = validateValue(inputValue);
 }
 
 export function clearInput() {
-  input.value = '';
+  formInput.value = '';
   result.innerHTML = '';
 }
