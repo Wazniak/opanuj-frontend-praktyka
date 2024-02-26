@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
 import { add, subtract, multiply, divide } from './calculator.ts';
-import { InputField, CalculatorButton } from './calculatorComponents.tsx';
+import { DEFAULT_VALUE } from './constant.ts';
+import { InputField } from './components/calculatorInput.tsx';
+import { CalculatorButton } from './components/calculatorButton.tsx';
 
 const App = () => {
-  const DEFAULT_VALUE = 0;
   const [firstValue, setFirstValue] = useState<number>(DEFAULT_VALUE);
   const [secondValue, setSecondValue] = useState<number>(DEFAULT_VALUE);
   const [result, setResult] = useState<number | string>(DEFAULT_VALUE);
