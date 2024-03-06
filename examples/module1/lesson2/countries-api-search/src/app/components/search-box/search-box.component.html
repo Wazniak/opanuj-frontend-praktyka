@@ -1,0 +1,28 @@
+<div class="search-container">
+  <mat-form-field id="searchField" appearance="fill">
+    <input matInput [(ngModel)]="searchQuery" (keyup.enter)="onSearch()"
+           placeholder="Country name">
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Filter</mat-label>
+    <mat-select [(value)]="filterType">
+      <mat-option value="name">Name</mat-option>
+      <mat-option value="capital">Capitol</mat-option>
+      <mat-option value="currency">Currency</mat-option>
+      <mat-option value="lang">Language</mat-option>
+    </mat-select>
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Sort</mat-label>
+    <mat-select [(value)]="sortType" (selectionChange)="onSortChange()">
+      <mat-option value="name">By name</mat-option>
+      <mat-option value="population">By population</mat-option>
+    </mat-select>
+  </mat-form-field>
+  <button mat-raised-button aria-label="Search button" (click)="onSearch()"
+          color="primary">
+    <mat-label>Search</mat-label>
+    <mat-icon>search</mat-icon>
+  </button>
+
+</div>
