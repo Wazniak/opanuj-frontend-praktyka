@@ -1,0 +1,28 @@
+<div class="results-container" *ngIf="countries">
+  <mat-card *ngFor="let c of countries">
+    <mat-card-header>
+      <mat-card-title-group>
+        <mat-card-title>{{ c.name.common }}</mat-card-title>
+        <mat-card-subtitle>{{ c.capital }}</mat-card-subtitle>
+        <img class="flags" mat-card-sm-image [src]="c.flags.png" alt="{{c.flags.alt}}">
+      </mat-card-title-group>
+    </mat-card-header>
+    <mat-card-content>
+      <p>Region {{ c.region }}</p>
+      <p>Subregion: {{ c.subregion }} </p>
+      <p>Population: {{ c.population }} </p>
+      <p>Area: {{ c.area }} m2</p>
+      <mat-divider></mat-divider>
+      <p>Spoken languages</p>
+      <mat-chip-listbox aria-label="List of languages used in the country">
+        <mat-chip *ngFor="let lang of (c.languages ? Object.values(c.languages) : [])">{{ lang }}</mat-chip>
+      </mat-chip-listbox>
+      <p>Currencies</p>
+      <mat-chip-listbox aria-label="Currencies available in the country">
+        <mat-chip *ngFor="let currency of (c.currencies ? Object.values(c.currencies): [])">
+          {{ currency.name }}
+        </mat-chip>
+      </mat-chip-listbox>
+    </mat-card-content>
+  </mat-card>
+</div>

@@ -1,0 +1,10 @@
+.error-handler {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: center;
+}
+
+.error-handler mat-error {
+  font-weight: bold;
+  font-family: "Fira Code", serif;
+}
